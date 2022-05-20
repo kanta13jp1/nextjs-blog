@@ -5,6 +5,8 @@ import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 // Add this import
 import Date from '../../components/date';
+// Add this import at the top of the file
+import utilStyles from '../../styles/utils.module.css';
 
 export default function Post({ postData }) {
     return (
@@ -13,13 +15,13 @@ export default function Post({ postData }) {
         <Head>
             <title>{postData.title}</title>
         </Head>
-        {postData.title}
-        <br />
-        {postData.id}
-        <br />
-        {/* Replace {postData.date} with this */}
-        <Date dateString={postData.date} />        <br />
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <article>
+            <h1 className={utilStyles.headingXl}>{postData.title}</h1>
+            <div className={utilStyles.lightText}>
+            <Date dateString={postData.date} />
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </article>
         <h2>
             <Link href="/">
                 <a>Back to home</a>
