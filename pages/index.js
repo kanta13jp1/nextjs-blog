@@ -28,6 +28,12 @@ export default function Home({ allPostsData }) {
             <a>this page!</a>
           </Link>
         </h1>
+        <h1 className="title">
+          Read{' '}
+          <Link href="/blog">
+            <a>blog!</a>
+          </Link>
+        </h1>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
