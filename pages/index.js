@@ -5,21 +5,12 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData();
-//   return {
-//     props: {
-//       allPostsData,
-//     },
-//   };
-// }
-
-export async function getStaticProps(context) {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
   return {
-      redirect: {
-          destination: '/',
-          permanent: true, // triggers 308
-      },
+    props: {
+      allPostsData,
+    },
   };
 }
 
