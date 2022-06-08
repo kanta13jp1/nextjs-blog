@@ -1,5 +1,5 @@
 function About() {
-    return <div>About Test</div>
+    return <div>About Test Redirect</div>
 }
 
 export async function getStaticProps(context) {
