@@ -7,7 +7,7 @@ const app = protect(
     safeCompare(username, process.env.USERNAME || 'admin') &&
     safeCompare(password, process.env.PASSWORD || 'admin'),
   {
-    directory: `${__dirname}/out`,
+    directory: `${__dirname}/public`,
     onAuthFailed: (res) => {
       res.end('Authentication failed');
     },
