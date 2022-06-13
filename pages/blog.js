@@ -30,20 +30,29 @@ const headCells = [
       return <Chip label={data?.age} />;
     },
   },
+  {
+    id: "payedvacation",
+    numeric: false,
+    disablePadding: false,
+    label: "有給残日数",
+    onRender: (data) => {
+      return <Chip label={data?.age} />;
+    },
+  },
 ];
 
 function Blog({ posts }) {
     return (
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>氏名：{post.lastname} {post.firstname} 年齢：{post.age}</li>
+          <li key={post.id}>氏名：{post.lastname} {post.firstname} 年齢：{post.age} 有給残：{post.payedvacation}</li>
         ))}
         <div>
         <h1>material-table Demo</h1>
           <MaterialTable
             title={"従業員一覧"}
             style={{ 
-              width: '50%',
+              width: '1020px',
               padding: '0 8px'
             }}
             columns={[
@@ -61,6 +70,7 @@ function Blog({ posts }) {
               { title: '姓', field: 'lastname',  width: '200px'},
               { title: '名', field: 'firstname', width: '200px'},
               { title: '年齢', field: 'age', width: '70px' },
+              { title: '有給残日数', field: 'payedvacation', width: '100px' },
             ]}
             data={posts}
             options={{
@@ -78,7 +88,7 @@ function Blog({ posts }) {
           <h1>material-table-next Demo</h1>
           <MaterialTableNext
             title={"従業員一覧"}
-            searchKeys={["id","lastname","firstname"]}
+            searchKeys={["id","lastname","firstname","age","payedvacation"]}
             rows={posts}
             headCells={headCells}
             // loading={true}
