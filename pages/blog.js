@@ -22,6 +22,12 @@ const headCells = [
     label: "名",
   },
   {
+    id: "email",
+    numeric: false,
+    disablePadding: false,
+    label: "メール",
+  },
+  {
     id: "age",
     numeric: false,
     disablePadding: false,
@@ -45,7 +51,7 @@ function Blog({ posts }) {
     return (
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>氏名：{post.lastname} {post.firstname} 年齢：{post.age} 有給残：{post.payedvacation}</li>
+          <li key={post.id}>氏名：{post.lastname} {post.firstname} メール：{post.email} 年齢：{post.age} 有給残：{post.payedvacation}</li>
         ))}
         <div>
         <h1>material-table Demo</h1>
@@ -69,6 +75,7 @@ function Blog({ posts }) {
               },
               { title: '姓', field: 'lastname',  width: '200px'},
               { title: '名', field: 'firstname', width: '200px'},
+              { title: 'メール', field: 'email',  width: '200px'},
               { title: '年齢', field: 'age', width: '70px' },
               { title: '有給残日数', field: 'payedvacation', width: '100px' },
             ]}
@@ -88,7 +95,7 @@ function Blog({ posts }) {
           <h1>material-table-next Demo</h1>
           <MaterialTableNext
             title={"従業員一覧"}
-            searchKeys={["id","lastname","firstname","age","payedvacation"]}
+            searchKeys={["id","lastname","firstname","email","age","payedvacation"]}
             rows={posts}
             headCells={headCells}
             // loading={true}
